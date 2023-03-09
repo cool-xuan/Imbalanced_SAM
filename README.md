@@ -10,6 +10,26 @@ Class imbalance is a common challenge in real-world recognition tasks, where the
 ## Enviroment
 - PyTorch 
 
+## Datasets
+The `train.py` will automatically download the CIFAR100 into `./datasets` dir.
+
+## train
+```shell
+python scripts\train.py \
+    --imb_factor ${IMBALANCED FACTOR} \
+    --opt ${OPTIMIZER in ['sgd', 'sam', 'imbsam']} \
+    --rho ${RHO_IN_SAM OR IMBSAM} \
+    --eta ${ETA_IN_IMBSAM} \
+```
+
+## Results on CIFAR100-LT (IF=100)
+| Optimizer |   Many   |   Med.   |   Few    |   ALl    |
+| --------- | :------: | :------: | :------: | :------: |
+| SGD       |   77.8   |   46.6   |   13.5   |   47.6   |
+| SAM       | **79.7** |   49.3   |   12.4   |   48.9   |
+| ImbSAM    |   75.9   | **53.5** | **19.4** | **51.1** |
+
 ## Thanks to
 
 - [ASAM](https://github.com/SamsungLabs/ASAM)
+- [WB](https://github.com/ShadeAlsha/LTR-weight-balancing)
