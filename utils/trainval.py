@@ -132,12 +132,12 @@ def forbackward(model, lossFunc, optimizer, optim_mode, tail_classes, images, ta
         head_loss.backward(retain_graph=True)
         optimizer.first_step()
                             
-        tail_loss = loss[tail_mask].sum() / targets.size(0) 
+        tail_loss = loss[tail_mask].sum() / targets.size(0) * 2
         tail_loss.backward()
         optimizer.second_step()
                             
         logits = model(images)
-        tail_loss = lossFunc(logits[tail_mask], targets[tail_mask]).sum() / targets.size(0) 
+        tail_loss = lossFunc(logits[tail_mask], targets[tail_mask]).sum() / targets.size(0) * 2
         tail_loss.backward()
         optimizer.third_step()
         loss = head_loss + tail_loss
