@@ -23,11 +23,13 @@ python scripts\train.py \
 ```
 
 ## Results on CIFAR100-LT (IF=100)
-| Optimizer |   Many   |   Med.   |   Few    |   ALl    |
+| Optimizer |   Many   |   Med.   |   Few    |   ALL    |
 | --------- | :------: | :------: | :------: | :------: |
 | SGD       |   77.8   |   46.6   |   13.5   |   47.6   |
 | SAM       | **79.7** |   49.3   |   12.4   |   48.9   |
 | ImbSAM    |   75.9   | **53.5** | **19.4** | **51.1** |
+
+The trained model is available at [OneDrive](https://1drv.ms/u/s!AsjdCOUsl_IRjt1KK7v79XqGDmkqDQ?e=v6CoKJ), which achieves better performance (ALL Acc of 51.6) than reported results in our paper.
 
 ## Thanks to
 
